@@ -112,9 +112,44 @@ a {
 
 nav {
   display: flex;
+  align-items: center;
   gap: 32px;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.language-picker {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  border-left: 1px solid var(--line);
+  padding-left: 20px;
+}
+
+.language-picker select {
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.language-picker select:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 nav a,
@@ -650,6 +685,12 @@ nav a:hover,
 
   nav {
     gap: 18px;
+    font-size: 0.78rem;
+  }
+
+  .language-picker {
+    margin-left: 0;
+    padding-left: 12px;
   }
 
   .hero {

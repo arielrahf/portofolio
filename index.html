@@ -15,9 +15,16 @@
     <div class="container nav-wrap">
       <a class="brand" href="#beranda">RHF<span>.</span></a>
       <nav aria-label="Navigasi utama">
-        <a href="#tentang">Tentang</a>
-        <a href="#proyek">Proyek</a>
-        <a href="#kontak">Kontak</a>
+        <a href="#tentang" data-i18n="navAbout">Tentang</a>
+        <a href="#proyek" data-i18n="navProjects">Proyek</a>
+        <a href="#kontak" data-i18n="navContact">Kontak</a>
+        <label class="language-picker" aria-label="Pilih bahasa">
+          <span class="sr-only">Bahasa</span>
+          <select id="language-select">
+            <option value="id">ID</option>
+            <option value="en">EN</option>
+          </select>
+        </label>
       </nav>
     </div>
   </header>
@@ -25,10 +32,10 @@
   <main id="beranda">
     <section class="hero container" aria-labelledby="judul-utama">
       <div class="hero-copy">
-        <p class="eyebrow">Halo, saya</p>
+        <p class="eyebrow" data-i18n="heroGreeting">Halo, saya</p>
         <h1 id="judul-utama">Raden<br><span>Hazriel</span><br><span>Firdausy.</span></h1>
-        <p class="intro">Lulusan Informatika yang suka ngulik web, game, dan hal-hal seru di balik layar digital. Biasanya ditemani Lua, JavaScript, Python, atau Java.</p>
-        <a class="button" href="#tentang">Kenalan yuk <span aria-hidden="true">&#8595;</span></a>
+        <p class="intro" data-i18n="heroIntro">Lulusan Informatika yang suka ngulik web, game, dan hal-hal seru di balik layar digital. Biasanya ditemani Lua, JavaScript, Python, atau Java.</p>
+        <a class="button" href="#tentang"><span data-i18n="heroButton">Kenalan yuk</span> <span aria-hidden="true">&#8595;</span></a>
       </div>
       <div class="portrait-placeholder" role="img" aria-label="Tempat foto profil">
         <img src="dokumentasi/profil/fotoprofil2.jpeg" alt="Foto profil Raden Hazriel Firdausy">
@@ -38,8 +45,8 @@
     <section class="projects" id="proyek" aria-labelledby="judul-proyek">
       <div class="container">
         <div class="projects-heading">
-          <p class="section-number reveal-on-scroll">03 / PROYEK PILIHAN</p>
-          <h2 id="judul-proyek" class="reveal-on-scroll">Beberapa hal yang pernah saya <em>buat.</em></h2>
+          <p class="section-number reveal-on-scroll" data-i18n="projectsLabel">03 / PROYEK-PROYEK SAYA</p>
+          <h2 id="judul-proyek" class="reveal-on-scroll" data-i18n="projectsTitle">Beberapa hal yang pernah saya <em>buat.</em></h2>
         </div>
 
         <article class="project-card reveal-on-scroll">
@@ -49,16 +56,16 @@
             <figure class="documentation-item documentation-item-three reveal-on-scroll"><img src="dokumentasi/masjos/screesnhotmasjos.png" alt="Dokumentasi materi Ecobrick MasJOS"></figure>
           </div>
           <div class="project-content">
-            <div class="project-meta"><span>Agustus - September 2025</span><span>Proyek KKN · Fullstack</span></div>
-            <h3>MasJOS Web - Masyarakat Jogja Olah Sampah Interaktif</h3>
-            <p>MasJOS adalah website edukasi yang mengajak orang belajar memilah dan mengolah sampah dengan cara yang lebih interaktif dan tidak membosankan.</p>
+            <div class="project-meta"><span data-i18n="masjosDate">Agustus - September 2025</span><span data-i18n="masjosMeta">Proyek KKN · Fullstack</span></div>
+            <h3 data-i18n="masjosTitle">MasJOS Web - Masyarakat Jogja Olah Sampah Interaktif</h3>
+            <p data-i18n="masjosDescription">MasJOS adalah website edukasi yang mengajak orang belajar memilah dan mengolah sampah dengan cara yang lebih interaktif dan tidak membosankan.</p>
             <ul>
-              <li>Mengerjakannya bareng tim kecil berisi tiga orang menggunakan React (Vite).</li>
-              <li>Ikut menyusun alur sistem sekaligus merancang tampilan UI/UX-nya.</li>
-              <li>Membuat fitur edukasi, drag-and-drop untuk memilah sampah, serta halaman Ecobrick.</li>
+              <li data-i18n="masjosPoint1">Mengerjakannya bareng tim kecil berisi tiga orang menggunakan React (Vite).</li>
+              <li data-i18n="masjosPoint2">Ikut menyusun alur sistem sekaligus merancang tampilan UI/UX-nya.</li>
+              <li data-i18n="masjosPoint3">Membuat fitur edukasi, drag-and-drop untuk memilah sampah, serta halaman Ecobrick.</li>
             </ul>
-            <p class="project-stack">React · Vite · UI/UX · Edukasi lingkungan</p>
-            <a class="project-link" href="https://imujiel.github.io/masjos-web" target="_blank" rel="noopener noreferrer">Lihat website MasJOS <span aria-hidden="true">&#8599;</span></a>
+            <p class="project-stack" data-i18n="masjosStack">React · Vite · UI/UX · Edukasi lingkungan</p>
+            <a class="project-link" href="https://imujiel.github.io/masjos-web" target="_blank" rel="noopener noreferrer"><span data-i18n="masjosLink">Lihat website MasJOS</span> <span aria-hidden="true">&#8599;</span></a>
           </div>
         </article>
 
@@ -69,16 +76,16 @@
             <figure class="documentation-item documentation-item-three reveal-on-scroll"><img src="dokumentasi/togarden/thumbnailtogarden.jpg" alt="Dokumentasi TOGAPEDIA"></figure>
           </div>
           <div class="project-content">
-            <div class="project-meta"><span>Januari - Juli 2026</span><span>Proyek Skripsi · Game Developer</span></div>
-            <h3>TOGARDEN - Game Edukasi Tanaman Obat Berbasis Roblox</h3>
-            <p>TOGARDEN adalah game edukasi di Roblox yang mengajak siswa SD mengenal tanaman obat keluarga sambil bermain dan menjelajahi dunia game.</p>
+            <div class="project-meta"><span data-i18n="togardenDate">Januari - Juli 2026</span><span data-i18n="togardenMeta">Proyek Skripsi · Game Developer</span></div>
+            <h3 data-i18n="togardenTitle">TOGARDEN - Game Edukasi Tanaman Obat Berbasis Roblox</h3>
+            <p data-i18n="togardenDescription">TOGARDEN adalah game edukasi di Roblox yang mengajak siswa SD mengenal tanaman obat keluarga sambil bermain dan menjelajahi dunia game.</p>
             <ul>
-              <li>Membangun dunia dan gameplay-nya menggunakan Lua di Roblox Studio.</li>
-              <li>Membuat mekanisme tanam, panen, jual, dan ensiklopedia interaktif TOGAPEDIA.</li>
-              <li>Mencoba game-nya langsung bersama pengguna untuk melihat bagian mana yang masih bisa dibuat lebih seru.</li>
+              <li data-i18n="togardenPoint1">Membangun dunia dan gameplay-nya menggunakan Lua di Roblox Studio.</li>
+              <li data-i18n="togardenPoint2">Membuat mekanisme tanam, panen, jual, dan ensiklopedia interaktif TOGAPEDIA.</li>
+              <li data-i18n="togardenPoint3">Mencoba game-nya langsung bersama pengguna untuk melihat bagian mana yang masih bisa dibuat lebih seru.</li>
             </ul>
-            <p class="project-stack">Roblox Studio · Lua · Game design · User testing</p>
-            <a class="project-link" href="https://www.roblox.com/games/120349401559111/TOGARDEN" target="_blank" rel="noopener noreferrer">Mainkan TOGARDEN <span aria-hidden="true">&#8599;</span></a>
+            <p class="project-stack" data-i18n="togardenStack">Roblox Studio · Lua · Game design · User testing</p>
+            <a class="project-link" href="https://www.roblox.com/games/120349401559111/TOGARDEN" target="_blank" rel="noopener noreferrer"><span data-i18n="togardenLink">Mainkan TOGARDEN</span> <span aria-hidden="true">&#8599;</span></a>
           </div>
         </article>
 
@@ -87,16 +94,16 @@
             <figure class="documentation-item documentation-item-one reveal-on-scroll"><img src="dokumentasi/cafe/screenshotcafe.png" alt="Dokumentasi website pemesanan kafe"></figure>
           </div>
           <div class="project-content">
-            <div class="project-meta"><span>Juli 2026</span><span>Proyek pribadi · Fullstack</span></div>
-            <h3>Website Pemesanan Kafe</h3>
-            <p>Ini adalah prototype website yang memungkinkan pelanggan memesan makanan langsung dari meja tanpa harus mengantre di kasir.</p>
+            <div class="project-meta"><span data-i18n="cafeDate">Juli 2026</span><span data-i18n="cafeMeta">Proyek pribadi · Fullstack</span></div>
+            <h3 data-i18n="cafeTitle">Website Pemesanan Kafe</h3>
+            <p data-i18n="cafeDescription">Ini adalah prototype website yang memungkinkan pelanggan memesan makanan langsung dari meja tanpa harus mengantre di kasir.</p>
             <ul>
-              <li>Membuat prototype dengan Java (Maven), HTML, CSS, dan JavaScript.</li>
-              <li>Menyusun alur dari pelanggan memilih menu sampai pesanan diterima staf kafe.</li>
-              <li>Menjaga alurnya tetap simpel supaya pesan makanan terasa cepat dan praktis.</li>
+              <li data-i18n="cafePoint1">Membuat prototype dengan Java (Maven), HTML, CSS, dan JavaScript.</li>
+              <li data-i18n="cafePoint2">Menyusun alur dari pelanggan memilih menu sampai pesanan diterima staf kafe.</li>
+              <li data-i18n="cafePoint3">Menjaga alurnya tetap simpel supaya pesan makanan terasa cepat dan praktis.</li>
             </ul>
-            <p class="project-stack">Java · Maven · HTML · CSS · JavaScript</p>
-            <a class="project-link" href="https://arielrahf.github.io/website-cafe/" target="_blank" rel="noopener noreferrer">Lihat website cafe <span aria-hidden="true">&#8599;</span></a>
+            <p class="project-stack" data-i18n="cafeStack">Java · Maven · HTML · CSS · JavaScript</p>
+            <a class="project-link" href="https://arielrahf.github.io/website-cafe/" target="_blank" rel="noopener noreferrer"><span data-i18n="cafeLink">Lihat website cafe</span> <span aria-hidden="true">&#8599;</span></a>
           </div>
         </article>
       </div>
@@ -105,17 +112,17 @@
     <section class="about" id="tentang" aria-labelledby="judul-tentang">
       <div class="container about-grid">
         <div class="about-visual">
-          <p class="section-number reveal-on-scroll">02 / TENTANG SAYA</p>
+          <p class="section-number reveal-on-scroll" data-i18n="aboutLabel">02 / TENTANG SAYA</p>
           <img class="about-photo reveal-on-scroll" src="dokumentasi/tentangsaya/tentangsaya.png" alt="Foto Raden Hazriel Firdausy saat kegiatan">
         </div>
         <div>
-          <h2 id="judul-tentang" class="reveal-on-scroll">Suka belajar dan bikin sesuatu yang <em>berguna (MUNGKIN).</em></h2>
-          <p class="reveal-on-scroll">Halo! Saya Ariel, Sarjana Komputer (S.Kom.) lulusan Informatika Universitas Islam Indonesia. Saya senang mengubah ide yang masih berantakan menjadi web atau game yang bisa dicoba dan dinikmati.</p>
-          <p class="reveal-on-scroll">Saya paling tertarik dengan web development, game, dan UI/UX. Buat saya, proses mencoba, menemukan bug, lalu memperbaikinya adalah bagian yang justru paling menyenangkan.</p>
-          <p class="reveal-on-scroll">Selama kuliah, saya berkesempatan mengerjakan berbagai proyek dengan tema yang berbeda-beda, mulai dari website edukasi pengelolaan sampah, game tanaman obat di Roblox, sampai prototype sistem pemesanan kafe. Setiap proyek memberi saya kesempatan untuk belajar menyusun ide, bekerja sama, memperhatikan detail kecil, dan membuat sesuatu dari nol. Saya percaya hasil yang bagus tidak harus selalu rumit, yang penting jelas, menyenangkan, dan benar-benar membantu orang yang menggunakannya. Sekarang, saya ingin terus belajar, mencoba hal baru, dan berkolaborasi dalam proyek-proyek menarik.</p>
+          <h2 id="judul-tentang" class="reveal-on-scroll" data-i18n="aboutTitle">Suka belajar dan bikin sesuatu yang <em>berguna (MUNGKIN).</em></h2>
+          <p class="reveal-on-scroll" data-i18n="aboutParagraph1">Halo! Saya Ariel, Sarjana Komputer (S.Kom.) lulusan Informatika Universitas Islam Indonesia. Saya senang mengubah ide yang masih berantakan menjadi web atau game yang bisa dicoba dan dinikmati.</p>
+          <p class="reveal-on-scroll" data-i18n="aboutParagraph2">Saya paling tertarik dengan web development, game, dan UI/UX. Buat saya, proses mencoba, menemukan bug, lalu memperbaikinya adalah bagian yang justru paling menyenangkan.</p>
+          <p class="reveal-on-scroll" data-i18n="aboutParagraph3">Selama kuliah, saya berkesempatan mengerjakan berbagai proyek dengan tema yang berbeda-beda, mulai dari website edukasi pengelolaan sampah, game tanaman obat di Roblox, sampai prototype sistem pemesanan kafe. Setiap proyek memberi saya kesempatan untuk belajar menyusun ide, bekerja sama, memperhatikan detail kecil, dan membuat sesuatu dari nol. Saya percaya hasil yang bagus tidak harus selalu rumit, yang penting jelas, menyenangkan, dan benar-benar membantu orang yang menggunakannya. Sekarang, saya ingin terus belajar, mencoba hal baru, dan berkolaborasi dalam proyek-proyek menarik.</p>
           <div class="about-details reveal-on-scroll">
-            <div><strong>Pendidikan</strong><span>Sarjana Komputer (S.Kom.) · Informatika<br>Universitas Islam Indonesia · 2022 - 2026<br>IPK 3.18 / 4.00</span></div>
-            <div><strong>Yang sering dipakai</strong><span>Lua · HTML · CSS · JavaScript · Python<br>Java · Unity · Roblox Studio · Figma</span></div>
+            <div><strong data-i18n="educationLabel">Pendidikan</strong><span>Sarjana Komputer (S.Kom.) · Informatika<br>Universitas Islam Indonesia · 2022 - 2026<br>IPK 3.18 / 4.00</span></div>
+            <div><strong data-i18n="skillsLabel">Yang sering dipakai</strong><span>Lua · HTML · CSS · JavaScript · Python<br>Java · Unity · Roblox Studio · Figma</span></div>
           </div>
         </div>
       </div>
@@ -125,8 +132,8 @@
   <footer class="site-footer" id="kontak">
     <div class="container footer-top">
       <div>
-        <p class="eyebrow reveal-on-scroll">Mari terhubung</p>
-        <h2 class="reveal-on-scroll">Punya ide atau mau<br><span>ngobrol santai?</span></h2>
+        <p class="eyebrow reveal-on-scroll" data-i18n="contactEyebrow">Mari terhubung</p>
+        <h2 class="reveal-on-scroll" data-i18n="contactTitle">Punya ide atau mau<br><span>ngobrol santai?</span></h2>
       </div>
       <div class="social-links" aria-label="Tautan sosial media">
         <a class="reveal-on-scroll" href="https://www.linkedin.com/in/arielrahf/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">&#8599;</span></a>
@@ -183,6 +190,69 @@
         history.pushState(null, '', link.getAttribute('href'));
       });
     });
+
+    const translations = {
+      id: {
+        navAbout: 'Tentang', navProjects: 'Proyek', navContact: 'Kontak', heroGreeting: 'Halo, saya',
+        heroIntro: 'Lulusan Informatika yang suka ngulik web, game, dan hal-hal seru di balik layar digital. Biasanya ditemani Lua, JavaScript, Python, atau Java.',
+        heroButton: 'Kenalan yuk', projectsLabel: '03 / PROYEK-PROYEK SAYA', projectsTitle: 'Beberapa hal yang pernah saya <em>buat.</em>',
+        masjosDate: 'Agustus - September 2025', masjosMeta: 'Proyek KKN · Fullstack', masjosTitle: 'MasJOS Web - Masyarakat Jogja Olah Sampah Interaktif',
+        masjosDescription: 'MasJOS adalah website edukasi yang mengajak orang belajar memilah dan mengolah sampah dengan cara yang lebih interaktif dan tidak membosankan.',
+        masjosPoint1: 'Mengerjakannya bareng tim kecil berisi tiga orang menggunakan React (Vite).', masjosPoint2: 'Ikut menyusun alur sistem sekaligus merancang tampilan UI/UX-nya.', masjosPoint3: 'Membuat fitur edukasi, drag-and-drop untuk memilah sampah, serta halaman Ecobrick.',
+        masjosStack: 'React · Vite · UI/UX · Edukasi lingkungan', masjosLink: 'Lihat website MasJOS',
+        togardenDate: 'Januari - Juli 2026', togardenMeta: 'Proyek Skripsi · Game Developer', togardenTitle: 'TOGARDEN - Game Edukasi Tanaman Obat Berbasis Roblox',
+        togardenDescription: 'TOGARDEN adalah game edukasi di Roblox yang mengajak siswa SD mengenal tanaman obat keluarga sambil bermain dan menjelajahi dunia game.',
+        togardenPoint1: 'Membangun dunia dan gameplay-nya menggunakan Lua di Roblox Studio.', togardenPoint2: 'Membuat mekanisme tanam, panen, jual, dan ensiklopedia interaktif TOGAPEDIA.', togardenPoint3: 'Mencoba game-nya langsung bersama pengguna untuk melihat bagian mana yang masih bisa dibuat lebih seru.',
+        togardenStack: 'Roblox Studio · Lua · Game design · User testing', togardenLink: 'Mainkan TOGARDEN',
+        cafeDate: 'Juli 2026', cafeMeta: 'Proyek pribadi · Fullstack', cafeTitle: 'Website Pemesanan Kafe',
+        cafeDescription: 'Ini adalah prototype website yang memungkinkan pelanggan memesan makanan langsung dari meja tanpa harus mengantre di kasir.',
+        cafePoint1: 'Membuat prototype dengan Java (Maven), HTML, CSS, dan JavaScript.', cafePoint2: 'Menyusun alur dari pelanggan memilih menu sampai pesanan diterima staf kafe.', cafePoint3: 'Menjaga alurnya tetap simpel supaya pesan makanan terasa cepat dan praktis.',
+        cafeStack: 'Java · Maven · HTML · CSS · JavaScript', cafeLink: 'Lihat website cafe', aboutLabel: '02 / TENTANG SAYA',
+        aboutTitle: 'Suka belajar dan bikin sesuatu yang <em>berguna (MUNGKIN).</em>',
+        aboutParagraph1: 'Halo! Saya Ariel, Sarjana Komputer (S.Kom.) lulusan Informatika Universitas Islam Indonesia. Saya senang mengubah ide yang masih berantakan menjadi web atau game yang bisa dicoba dan dinikmati.',
+        aboutParagraph2: 'Saya paling tertarik dengan web development, game, dan UI/UX. Buat saya, proses mencoba, menemukan bug, lalu memperbaikinya adalah bagian yang justru paling menyenangkan.',
+        aboutParagraph3: 'Selama kuliah, saya berkesempatan mengerjakan berbagai proyek dengan tema yang berbeda-beda, mulai dari website edukasi pengelolaan sampah, game tanaman obat di Roblox, sampai prototype sistem pemesanan kafe. Setiap proyek memberi saya kesempatan untuk belajar menyusun ide, bekerja sama, memperhatikan detail kecil, dan membuat sesuatu dari nol. Saya percaya hasil yang bagus tidak harus selalu rumit, yang penting jelas, menyenangkan, dan benar-benar membantu orang yang menggunakannya. Sekarang, saya ingin terus belajar, mencoba hal baru, dan berkolaborasi dalam proyek-proyek menarik.',
+        educationLabel: 'Pendidikan', skillsLabel: 'Yang sering dipakai', contactEyebrow: 'Mari terhubung', contactTitle: 'Punya ide atau mau<br><span>ngobrol santai?</span>'
+      },
+      en: {
+        navAbout: 'About', navProjects: 'Projects', navContact: 'Contact', heroGreeting: 'Hi, I am',
+        heroIntro: 'An Informatics graduate who enjoys exploring the web, games, and the fun things behind digital experiences. Usually accompanied by Lua, JavaScript, Python, or Java.',
+        heroButton: 'Let\'s connect', projectsLabel: '03 / MY PROJECTS', projectsTitle: 'A few things I have <em>made.</em>',
+        masjosDate: 'August - September 2025', masjosMeta: 'Community project · Fullstack', masjosTitle: 'MasJOS Web - An Interactive Waste Management Platform',
+        masjosDescription: 'MasJOS is an educational website that invites people to learn about sorting and processing waste in a more interactive and engaging way.',
+        masjosPoint1: 'Built it with a small team of three using React (Vite).', masjosPoint2: 'Helped shape the system flow and design its UI/UX.', masjosPoint3: 'Created educational features, drag-and-drop waste sorting, and an Ecobrick page.',
+        masjosStack: 'React · Vite · UI/UX · Environmental education', masjosLink: 'Visit MasJOS website',
+        togardenDate: 'January - July 2026', togardenMeta: 'Thesis project · Game Developer', togardenTitle: 'TOGARDEN - An Educational Medicinal Plant Game on Roblox',
+        togardenDescription: 'TOGARDEN is an educational Roblox game that introduces elementary students to family medicinal plants through play and exploration.',
+        togardenPoint1: 'Built the game world and gameplay with Lua in Roblox Studio.', togardenPoint2: 'Created the plant, harvest, and sell mechanics along with the interactive TOGAPEDIA.', togardenPoint3: 'Tested the game with users to find ways to make the experience even more fun.',
+        togardenStack: 'Roblox Studio · Lua · Game design · User testing', togardenLink: 'Play TOGARDEN',
+        cafeDate: 'July 2026', cafeMeta: 'Personal project · Fullstack', cafeTitle: 'Cafe Ordering Website',
+        cafeDescription: 'A website prototype that lets customers order food directly from their table without lining up at the cashier.',
+        cafePoint1: 'Built the prototype with Java (Maven), HTML, CSS, and JavaScript.', cafePoint2: 'Mapped the flow from choosing a menu to the order reaching cafe staff.', cafePoint3: 'Kept the flow simple so ordering feels quick and practical.',
+        cafeStack: 'Java · Maven · HTML · CSS · JavaScript', cafeLink: 'Visit cafe website', aboutLabel: '02 / ABOUT ME',
+        aboutTitle: 'I like learning and making things that are <em>useful (MAYBE).</em>',
+        aboutParagraph1: 'Hi! I am Ariel, a Computer Science graduate (S.Kom.) from Informatics at Universitas Islam Indonesia. I enjoy turning messy ideas into websites or games people can try and enjoy.',
+        aboutParagraph2: 'I am especially interested in web development, games, and UI/UX. For me, trying things out, finding bugs, and fixing them is actually one of the most fun parts.',
+        aboutParagraph3: 'During college, I worked on projects with many different themes, from a waste management education website and a medicinal plant game on Roblox to a cafe ordering prototype. Each project taught me how to shape ideas, work with others, notice small details, and build something from scratch. I believe a good result does not have to be complicated; it just needs to be clear, enjoyable, and genuinely helpful. Now I want to keep learning, trying new things, and collaborating on interesting projects.',
+        educationLabel: 'Education', skillsLabel: 'Things I use', contactEyebrow: 'Let\'s connect', contactTitle: 'Have an idea or want to<br><span>just have a chat?</span>'
+      }
+    };
+
+    const languageSelect = document.querySelector('#language-select');
+
+    const setLanguage = (language) => {
+      const selectedTranslations = translations[language];
+      document.documentElement.lang = language;
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        element.innerHTML = selectedTranslations[element.dataset.i18n];
+      });
+      document.title = language === 'en' ? 'Portfolio | Raden Hazriel Firdausy' : 'Portofolio | Raden Hazriel Firdausy';
+      languageSelect.value = language;
+      localStorage.setItem('portfolio-language', language);
+    };
+
+    languageSelect.addEventListener('change', (event) => setLanguage(event.target.value));
+    setLanguage(localStorage.getItem('portfolio-language') || 'id');
 
     const lightbox = document.querySelector('#lightbox');
     const lightboxImage = document.querySelector('.lightbox-image');
