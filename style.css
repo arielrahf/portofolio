@@ -246,6 +246,7 @@ nav a:hover,
 }
 
 .hero .eyebrow {
+  color: var(--ink);
   animation: reveal-up 700ms 120ms ease both;
 }
 
@@ -353,6 +354,10 @@ nav a:hover,
 .projects-heading h2 em {
   color: #47766b;
   font-style: normal;
+}
+
+.projects-heading .section-number {
+  color: var(--ink);
 }
 
 .project-card {
