@@ -18,13 +18,13 @@
         <a href="#tentang" data-i18n="navAbout">Tentang</a>
         <a href="#proyek" data-i18n="navProjects">Proyek</a>
         <a href="#kontak" data-i18n="navContact">Kontak</a>
-        <label class="language-picker" aria-label="Pilih bahasa">
-          <span class="sr-only">Bahasa</span>
-          <select id="language-select">
-            <option value="id">ID</option>
-            <option value="en">EN</option>
-          </select>
-        </label>
+        <div class="language-picker">
+          <button class="language-trigger" id="language-trigger" type="button" aria-expanded="false" aria-haspopup="listbox">ID <span class="language-chevron" aria-hidden="true"></span></button>
+          <div class="language-menu" id="language-menu" role="listbox" aria-label="Pilih bahasa">
+            <button type="button" role="option" data-language="id" aria-selected="true">ID</button>
+            <button type="button" role="option" data-language="en" aria-selected="false">EN</button>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -238,7 +238,8 @@
       }
     };
 
-    const languageSelect = document.querySelector('#language-select');
+    const languageTrigger = document.querySelector('#language-trigger');
+    const languageMenu = document.querySelector('#language-menu');
 
     const setLanguage = (language) => {
       const selectedTranslations = translations[language];
@@ -247,11 +248,34 @@
         element.innerHTML = selectedTranslations[element.dataset.i18n];
       });
       document.title = language === 'en' ? 'Portfolio | Raden Hazriel Firdausy' : 'Portofolio | Raden Hazriel Firdausy';
-      languageSelect.value = language;
+      languageTrigger.innerHTML = `${language.toUpperCase()} <span class="language-chevron" aria-hidden="true"></span>`;
+      languageMenu.querySelectorAll('[data-language]').forEach((option) => {
+        option.setAttribute('aria-selected', option.dataset.language === language);
+      });
       localStorage.setItem('portfolio-language', language);
     };
 
-    languageSelect.addEventListener('change', (event) => setLanguage(event.target.value));
+    languageTrigger.addEventListener('click', () => {
+      const isOpen = languageTrigger.getAttribute('aria-expanded') === 'true';
+      languageTrigger.setAttribute('aria-expanded', String(!isOpen));
+      languageMenu.classList.toggle('is-open', !isOpen);
+    });
+
+    languageMenu.querySelectorAll('[data-language]').forEach((option) => {
+      option.addEventListener('click', () => {
+        setLanguage(option.dataset.language);
+        languageTrigger.setAttribute('aria-expanded', 'false');
+        languageMenu.classList.remove('is-open');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.language-picker')) {
+        languageTrigger.setAttribute('aria-expanded', 'false');
+        languageMenu.classList.remove('is-open');
+      }
+    });
+
     setLanguage(localStorage.getItem('portfolio-language') || 'id');
 
     const lightbox = document.querySelector('#lightbox');
